@@ -1,0 +1,55 @@
+[2025-12-10T15:46:04.626+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-12-10T15:46:04.682+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: neoway_dbt_orchestration.dbt_debug manual__2025-12-10T15:46:03.769023+00:00 [queued]>
+[2025-12-10T15:46:04.689+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: neoway_dbt_orchestration.dbt_debug manual__2025-12-10T15:46:03.769023+00:00 [queued]>
+[2025-12-10T15:46:04.690+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2025-12-10T15:46:04.702+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): dbt_debug> on 2025-12-10 15:46:03.769023+00:00
+[2025-12-10T15:46:04.710+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'neoway_dbt_orchestration', 'dbt_debug', 'manual__2025-12-10T15:46:03.769023+00:00', '--job-id', '129', '--raw', '--subdir', 'DAGS_FOLDER/dbt_orchestration_dag.py', '--cfg-path', '/tmp/tmp14o1df5e']
+[2025-12-10T15:46:04.713+0000] {standard_task_runner.py:91} INFO - Job 129: Subtask dbt_debug
+[2025-12-10T15:46:04.713+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=25234) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-12-10T15:46:04.714+0000] {standard_task_runner.py:63} INFO - Started process 25235 to run task
+[2025-12-10T15:46:04.755+0000] {task_command.py:426} INFO - Running <TaskInstance: neoway_dbt_orchestration.dbt_debug manual__2025-12-10T15:46:03.769023+00:00 [running]> on host 4eff101ef177
+[2025-12-10T15:46:04.843+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='neoway_dbt_orchestration' AIRFLOW_CTX_TASK_ID='dbt_debug' AIRFLOW_CTX_EXECUTION_DATE='2025-12-10T15:46:03.769023+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-12-10T15:46:03.769023+00:00'
+[2025-12-10T15:46:04.843+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-12-10T15:46:04.865+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-12-10T15:46:04.866+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/***/dbt && dbt debug --target prod']
+[2025-12-10T15:46:04.877+0000] {subprocess.py:86} INFO - Output:
+[2025-12-10T15:46:06.684+0000] {subprocess.py:93} INFO - [0m15:46:06  Running with dbt=1.8.7
+[2025-12-10T15:46:06.698+0000] {subprocess.py:93} INFO - [0m15:46:06  dbt version: 1.8.7
+[2025-12-10T15:46:06.699+0000] {subprocess.py:93} INFO - [0m15:46:06  python version: 3.12.3
+[2025-12-10T15:46:06.700+0000] {subprocess.py:93} INFO - [0m15:46:06  python path: /home/***/.local/bin/python
+[2025-12-10T15:46:06.701+0000] {subprocess.py:93} INFO - [0m15:46:06  os info: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.36
+[2025-12-10T15:46:06.867+0000] {subprocess.py:93} INFO - [0m15:46:06  Using profiles dir at /opt/***/dbt
+[2025-12-10T15:46:06.868+0000] {subprocess.py:93} INFO - [0m15:46:06  Using profiles.yml file at /opt/***/dbt/profiles.yml
+[2025-12-10T15:46:06.869+0000] {subprocess.py:93} INFO - [0m15:46:06  Using dbt_project.yml file at /opt/***/dbt/dbt_project.yml
+[2025-12-10T15:46:06.870+0000] {subprocess.py:93} INFO - [0m15:46:06  adapter type: duckdb
+[2025-12-10T15:46:06.871+0000] {subprocess.py:93} INFO - [0m15:46:06  adapter version: 1.8.2
+[2025-12-10T15:46:06.942+0000] {subprocess.py:93} INFO - [0m15:46:06  Configuration:
+[2025-12-10T15:46:06.943+0000] {subprocess.py:93} INFO - [0m15:46:06    profiles.yml file [[32mOK found and valid[0m]
+[2025-12-10T15:46:06.943+0000] {subprocess.py:93} INFO - [0m15:46:06    dbt_project.yml file [[32mOK found and valid[0m]
+[2025-12-10T15:46:06.944+0000] {subprocess.py:93} INFO - [0m15:46:06  Required dependencies:
+[2025-12-10T15:46:06.953+0000] {subprocess.py:93} INFO - [0m15:46:06   - git [[32mOK found[0m]
+[2025-12-10T15:46:06.954+0000] {subprocess.py:93} INFO - 
+[2025-12-10T15:46:06.954+0000] {subprocess.py:93} INFO - [0m15:46:06  Connection:
+[2025-12-10T15:46:06.955+0000] {subprocess.py:93} INFO - [0m15:46:06    database: prod
+[2025-12-10T15:46:06.956+0000] {subprocess.py:93} INFO - [0m15:46:06    schema: main
+[2025-12-10T15:46:06.956+0000] {subprocess.py:93} INFO - [0m15:46:06    path: /opt/***/dbt/prod.duckdb
+[2025-12-10T15:46:06.957+0000] {subprocess.py:93} INFO - [0m15:46:06    config_options: None
+[2025-12-10T15:46:06.958+0000] {subprocess.py:93} INFO - [0m15:46:06    extensions: None
+[2025-12-10T15:46:06.958+0000] {subprocess.py:93} INFO - [0m15:46:06    settings: {}
+[2025-12-10T15:46:06.959+0000] {subprocess.py:93} INFO - [0m15:46:06    external_root: .
+[2025-12-10T15:46:06.960+0000] {subprocess.py:93} INFO - [0m15:46:06    use_credential_provider: None
+[2025-12-10T15:46:06.960+0000] {subprocess.py:93} INFO - [0m15:46:06    attach: None
+[2025-12-10T15:46:06.961+0000] {subprocess.py:93} INFO - [0m15:46:06    filesystems: None
+[2025-12-10T15:46:06.962+0000] {subprocess.py:93} INFO - [0m15:46:06    remote: None
+[2025-12-10T15:46:06.962+0000] {subprocess.py:93} INFO - [0m15:46:06    plugins: None
+[2025-12-10T15:46:06.963+0000] {subprocess.py:93} INFO - [0m15:46:06    disable_transactions: False
+[2025-12-10T15:46:06.964+0000] {subprocess.py:93} INFO - [0m15:46:06  Registered adapter: duckdb=1.8.2
+[2025-12-10T15:46:07.114+0000] {subprocess.py:93} INFO - [0m15:46:07    Connection test: [[32mOK connection ok[0m]
+[2025-12-10T15:46:07.114+0000] {subprocess.py:93} INFO - 
+[2025-12-10T15:46:07.114+0000] {subprocess.py:93} INFO - [0m15:46:07  [32mAll checks passed![0m
+[2025-12-10T15:46:07.966+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-12-10T15:46:07.967+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-12-10T15:46:07.988+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=neoway_dbt_orchestration, task_id=dbt_debug, run_id=manual__2025-12-10T15:46:03.769023+00:00, execution_date=20251210T154603, start_date=20251210T154604, end_date=20251210T154607
+[2025-12-10T15:46:08.018+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-12-10T15:46:08.040+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-12-10T15:46:08.041+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

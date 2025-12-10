@@ -1,0 +1,37 @@
+[2025-12-10T07:23:29.062+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-12-10T07:23:29.086+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: neoway_dbt_orchestration.export_parquet manual__2025-12-10T07:18:00.225349+00:00 [queued]>
+[2025-12-10T07:23:29.092+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: neoway_dbt_orchestration.export_parquet manual__2025-12-10T07:18:00.225349+00:00 [queued]>
+[2025-12-10T07:23:29.093+0000] {taskinstance.py:2306} INFO - Starting attempt 2 of 2
+[2025-12-10T07:23:29.102+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): export_parquet> on 2025-12-10 07:18:00.225349+00:00
+[2025-12-10T07:23:29.109+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'neoway_dbt_orchestration', 'export_parquet', 'manual__2025-12-10T07:18:00.225349+00:00', '--job-id', '105', '--raw', '--subdir', 'DAGS_FOLDER/dbt_orchestration_dag.py', '--cfg-path', '/tmp/tmpx_bz4205']
+[2025-12-10T07:23:29.111+0000] {standard_task_runner.py:91} INFO - Job 105: Subtask export_parquet
+[2025-12-10T07:23:29.112+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=4509) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-12-10T07:23:29.112+0000] {standard_task_runner.py:63} INFO - Started process 4510 to run task
+[2025-12-10T07:23:29.148+0000] {task_command.py:426} INFO - Running <TaskInstance: neoway_dbt_orchestration.export_parquet manual__2025-12-10T07:18:00.225349+00:00 [running]> on host ff5c032158b9
+[2025-12-10T07:23:29.215+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='neoway_dbt_orchestration' AIRFLOW_CTX_TASK_ID='export_parquet' AIRFLOW_CTX_EXECUTION_DATE='2025-12-10T07:18:00.225349+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-12-10T07:18:00.225349+00:00'
+[2025-12-10T07:23:29.216+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-12-10T07:23:29.228+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-12-10T07:23:29.229+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/***/dbt && duckdb prod.duckdb "COPY main_gold.vw_cotacao TO \'vw_cotacao.parquet\' (FORMAT PARQUET)"']
+[2025-12-10T07:23:29.239+0000] {subprocess.py:86} INFO - Output:
+[2025-12-10T07:23:29.241+0000] {subprocess.py:93} INFO - /usr/bin/bash: line 1: duckdb: command not found
+[2025-12-10T07:23:29.241+0000] {subprocess.py:97} INFO - Command exited with return code 127
+[2025-12-10T07:23:29.242+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-12-10T07:23:29.250+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 243, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 127.
+[2025-12-10T07:23:29.254+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=neoway_dbt_orchestration, task_id=export_parquet, run_id=manual__2025-12-10T07:18:00.225349+00:00, execution_date=20251210T071800, start_date=20251210T072329, end_date=20251210T072329
+[2025-12-10T07:23:29.262+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 105 for task export_parquet (Bash command failed. The command returned a non-zero exit code 127.; 4510)
+[2025-12-10T07:23:29.286+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-12-10T07:23:29.299+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-12-10T07:23:29.304+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

@@ -1,0 +1,47 @@
+[2025-12-10T07:10:13.847+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-12-10T07:10:13.873+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: neoway_dbt_orchestration.dbt_seed manual__2025-12-10T07:10:09.405163+00:00 [queued]>
+[2025-12-10T07:10:13.880+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: neoway_dbt_orchestration.dbt_seed manual__2025-12-10T07:10:09.405163+00:00 [queued]>
+[2025-12-10T07:10:13.880+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2025-12-10T07:10:13.889+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): dbt_seed> on 2025-12-10 07:10:09.405163+00:00
+[2025-12-10T07:10:13.896+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'neoway_dbt_orchestration', 'dbt_seed', 'manual__2025-12-10T07:10:09.405163+00:00', '--job-id', '88', '--raw', '--subdir', 'DAGS_FOLDER/dbt_orchestration_dag.py', '--cfg-path', '/tmp/tmp5_kvmesd']
+[2025-12-10T07:10:13.898+0000] {standard_task_runner.py:91} INFO - Job 88: Subtask dbt_seed
+[2025-12-10T07:10:13.898+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=446) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-12-10T07:10:13.899+0000] {standard_task_runner.py:63} INFO - Started process 447 to run task
+[2025-12-10T07:10:13.933+0000] {task_command.py:426} INFO - Running <TaskInstance: neoway_dbt_orchestration.dbt_seed manual__2025-12-10T07:10:09.405163+00:00 [running]> on host ff5c032158b9
+[2025-12-10T07:10:13.997+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='neoway_dbt_orchestration' AIRFLOW_CTX_TASK_ID='dbt_seed' AIRFLOW_CTX_EXECUTION_DATE='2025-12-10T07:10:09.405163+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-12-10T07:10:09.405163+00:00'
+[2025-12-10T07:10:13.998+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-12-10T07:10:14.008+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-12-10T07:10:14.009+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/***/dbt && dbt seed']
+[2025-12-10T07:10:14.019+0000] {subprocess.py:86} INFO - Output:
+[2025-12-10T07:10:15.532+0000] {subprocess.py:93} INFO - [0m07:10:15  Running with dbt=1.8.7
+[2025-12-10T07:10:15.746+0000] {subprocess.py:93} INFO - [0m07:10:15  Registered adapter: duckdb=1.8.2
+[2025-12-10T07:10:16.360+0000] {subprocess.py:93} INFO - [0m07:10:16  Found 18 models, 7 seeds, 17 data tests, 422 macros
+[2025-12-10T07:10:16.363+0000] {subprocess.py:93} INFO - [0m07:10:16
+[2025-12-10T07:10:16.723+0000] {subprocess.py:93} INFO - [0m07:10:16  Concurrency: 1 threads (target='dev')
+[2025-12-10T07:10:16.723+0000] {subprocess.py:93} INFO - [0m07:10:16
+[2025-12-10T07:10:16.731+0000] {subprocess.py:93} INFO - [0m07:10:16  1 of 7 START seed file main_seed.cotacoes_bolsa ................................ [RUN]
+[2025-12-10T07:10:19.939+0000] {subprocess.py:93} INFO - [0m07:10:19  1 of 7 OK loaded seed file main_seed.cotacoes_bolsa ............................ [[32mINSERT 100089[0m in 3.20s]
+[2025-12-10T07:10:19.941+0000] {subprocess.py:93} INFO - [0m07:10:19  2 of 7 START seed file main_seed.df_empresas ................................... [RUN]
+[2025-12-10T07:10:20.336+0000] {subprocess.py:93} INFO - [0m07:10:20  2 of 7 OK loaded seed file main_seed.df_empresas ............................... [[32mINSERT 11853[0m in 0.39s]
+[2025-12-10T07:10:20.339+0000] {subprocess.py:93} INFO - [0m07:10:20  3 of 7 START seed file main_seed.empresas_bolsa ................................ [RUN]
+[2025-12-10T07:10:20.465+0000] {subprocess.py:93} INFO - [0m07:10:20  3 of 7 OK loaded seed file main_seed.empresas_bolsa ............................ [[32mINSERT 485[0m in 0.12s]
+[2025-12-10T07:10:20.468+0000] {subprocess.py:93} INFO - [0m07:10:20  4 of 7 START seed file main_seed.empresas_nivel_atividade ...................... [RUN]
+[2025-12-10T07:10:20.618+0000] {subprocess.py:93} INFO - [0m07:10:20  4 of 7 OK loaded seed file main_seed.empresas_nivel_atividade .................. [[32mINSERT 11853[0m in 0.15s]
+[2025-12-10T07:10:20.621+0000] {subprocess.py:93} INFO - [0m07:10:20  5 of 7 START seed file main_seed.empresas_porte ................................ [RUN]
+[2025-12-10T07:10:20.850+0000] {subprocess.py:93} INFO - [0m07:10:20  5 of 7 OK loaded seed file main_seed.empresas_porte ............................ [[32mINSERT 11853[0m in 0.23s]
+[2025-12-10T07:10:20.853+0000] {subprocess.py:93} INFO - [0m07:10:20  6 of 7 START seed file main_seed.empresas_saude_tributaria ..................... [RUN]
+[2025-12-10T07:10:20.997+0000] {subprocess.py:93} INFO - [0m07:10:20  6 of 7 OK loaded seed file main_seed.empresas_saude_tributaria ................. [[32mINSERT 11853[0m in 0.14s]
+[2025-12-10T07:10:21.000+0000] {subprocess.py:93} INFO - [0m07:10:21  7 of 7 START seed file main_seed.empresas_simples .............................. [RUN]
+[2025-12-10T07:10:21.163+0000] {subprocess.py:93} INFO - [0m07:10:21  7 of 7 OK loaded seed file main_seed.empresas_simples .......................... [[32mINSERT 11868[0m in 0.16s]
+[2025-12-10T07:10:21.201+0000] {subprocess.py:93} INFO - [0m07:10:21
+[2025-12-10T07:10:21.201+0000] {subprocess.py:93} INFO - [0m07:10:21  Finished running 7 seeds in 0 hours 0 minutes and 4.84 seconds (4.84s).
+[2025-12-10T07:10:21.251+0000] {subprocess.py:93} INFO - [0m07:10:21
+[2025-12-10T07:10:21.251+0000] {subprocess.py:93} INFO - [0m07:10:21  [32mCompleted successfully[0m
+[2025-12-10T07:10:21.252+0000] {subprocess.py:93} INFO - [0m07:10:21
+[2025-12-10T07:10:21.253+0000] {subprocess.py:93} INFO - [0m07:10:21  Done. PASS=7 WARN=0 ERROR=0 SKIP=0 TOTAL=7
+[2025-12-10T07:10:22.460+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-12-10T07:10:22.461+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-12-10T07:10:22.480+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=neoway_dbt_orchestration, task_id=dbt_seed, run_id=manual__2025-12-10T07:10:09.405163+00:00, execution_date=20251210T071009, start_date=20251210T071013, end_date=20251210T071022
+[2025-12-10T07:10:22.533+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-12-10T07:10:22.551+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-12-10T07:10:22.553+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

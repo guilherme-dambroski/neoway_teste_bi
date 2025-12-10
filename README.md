@@ -1,1 +1,0 @@
-# neoway_teste_bi
