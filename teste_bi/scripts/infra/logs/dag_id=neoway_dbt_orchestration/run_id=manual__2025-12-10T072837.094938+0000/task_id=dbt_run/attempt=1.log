@@ -1,0 +1,69 @@
+[2025-12-10T07:28:50.369+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-12-10T07:28:50.394+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: neoway_dbt_orchestration.dbt_run manual__2025-12-10T07:28:37.094938+00:00 [queued]>
+[2025-12-10T07:28:50.401+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: neoway_dbt_orchestration.dbt_run manual__2025-12-10T07:28:37.094938+00:00 [queued]>
+[2025-12-10T07:28:50.401+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2025-12-10T07:28:50.410+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): dbt_run> on 2025-12-10 07:28:37.094938+00:00
+[2025-12-10T07:28:50.418+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'neoway_dbt_orchestration', 'dbt_run', 'manual__2025-12-10T07:28:37.094938+00:00', '--job-id', '111', '--raw', '--subdir', 'DAGS_FOLDER/dbt_orchestration_dag.py', '--cfg-path', '/tmp/tmpyvfz0b1x']
+[2025-12-10T07:28:50.420+0000] {standard_task_runner.py:91} INFO - Job 111: Subtask dbt_run
+[2025-12-10T07:28:50.420+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=491) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-12-10T07:28:50.421+0000] {standard_task_runner.py:63} INFO - Started process 492 to run task
+[2025-12-10T07:28:50.457+0000] {task_command.py:426} INFO - Running <TaskInstance: neoway_dbt_orchestration.dbt_run manual__2025-12-10T07:28:37.094938+00:00 [running]> on host 4eff101ef177
+[2025-12-10T07:28:50.526+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='neoway_dbt_orchestration' AIRFLOW_CTX_TASK_ID='dbt_run' AIRFLOW_CTX_EXECUTION_DATE='2025-12-10T07:28:37.094938+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-12-10T07:28:37.094938+00:00'
+[2025-12-10T07:28:50.526+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-12-10T07:28:50.537+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-12-10T07:28:50.538+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/***/dbt && dbt run']
+[2025-12-10T07:28:50.549+0000] {subprocess.py:86} INFO - Output:
+[2025-12-10T07:28:52.174+0000] {subprocess.py:93} INFO - [0m07:28:52  Running with dbt=1.8.7
+[2025-12-10T07:28:52.390+0000] {subprocess.py:93} INFO - [0m07:28:52  Registered adapter: duckdb=1.8.2
+[2025-12-10T07:28:53.049+0000] {subprocess.py:93} INFO - [0m07:28:53  Found 18 models, 7 seeds, 17 data tests, 422 macros
+[2025-12-10T07:28:53.053+0000] {subprocess.py:93} INFO - [0m07:28:53
+[2025-12-10T07:28:53.586+0000] {subprocess.py:93} INFO - [0m07:28:53  Concurrency: 1 threads (target='dev')
+[2025-12-10T07:28:53.587+0000] {subprocess.py:93} INFO - [0m07:28:53
+[2025-12-10T07:28:53.595+0000] {subprocess.py:93} INFO - [0m07:28:53  1 of 18 START sql table model main_bronze.bz_cotacoes_bolsa .................... [RUN]
+[2025-12-10T07:28:54.361+0000] {subprocess.py:93} INFO - [0m07:28:54  1 of 18 OK created sql table model main_bronze.bz_cotacoes_bolsa ............... [[32mOK[0m in 0.76s]
+[2025-12-10T07:28:54.364+0000] {subprocess.py:93} INFO - [0m07:28:54  2 of 18 START sql table model main_bronze.bz_df_empresas ....................... [RUN]
+[2025-12-10T07:28:54.531+0000] {subprocess.py:93} INFO - [0m07:28:54  2 of 18 OK created sql table model main_bronze.bz_df_empresas .................. [[32mOK[0m in 0.16s]
+[2025-12-10T07:28:54.533+0000] {subprocess.py:93} INFO - [0m07:28:54  3 of 18 START sql table model main_bronze.bz_empresas_bolsa .................... [RUN]
+[2025-12-10T07:28:54.649+0000] {subprocess.py:93} INFO - [0m07:28:54  3 of 18 OK created sql table model main_bronze.bz_empresas_bolsa ............... [[32mOK[0m in 0.11s]
+[2025-12-10T07:28:54.652+0000] {subprocess.py:93} INFO - [0m07:28:54  4 of 18 START sql table model main_bronze.bz_empresas_nivel_atividade .......... [RUN]
+[2025-12-10T07:28:54.756+0000] {subprocess.py:93} INFO - [0m07:28:54  4 of 18 OK created sql table model main_bronze.bz_empresas_nivel_atividade ..... [[32mOK[0m in 0.10s]
+[2025-12-10T07:28:54.759+0000] {subprocess.py:93} INFO - [0m07:28:54  5 of 18 START sql table model main_bronze.bz_empresas_porte .................... [RUN]
+[2025-12-10T07:28:54.862+0000] {subprocess.py:93} INFO - [0m07:28:54  5 of 18 OK created sql table model main_bronze.bz_empresas_porte ............... [[32mOK[0m in 0.10s]
+[2025-12-10T07:28:54.865+0000] {subprocess.py:93} INFO - [0m07:28:54  6 of 18 START sql table model main_bronze.bz_empresas_saude_tributaria ......... [RUN]
+[2025-12-10T07:28:54.972+0000] {subprocess.py:93} INFO - [0m07:28:54  6 of 18 OK created sql table model main_bronze.bz_empresas_saude_tributaria .... [[32mOK[0m in 0.10s]
+[2025-12-10T07:28:54.974+0000] {subprocess.py:93} INFO - [0m07:28:54  7 of 18 START sql table model main_bronze.bz_empresas_simples .................. [RUN]
+[2025-12-10T07:28:55.081+0000] {subprocess.py:93} INFO - [0m07:28:55  7 of 18 OK created sql table model main_bronze.bz_empresas_simples ............. [[32mOK[0m in 0.10s]
+[2025-12-10T07:28:55.083+0000] {subprocess.py:93} INFO - [0m07:28:55  8 of 18 START sql table model main_gold.dim_calendario ......................... [RUN]
+[2025-12-10T07:28:55.193+0000] {subprocess.py:93} INFO - [0m07:28:55  8 of 18 OK created sql table model main_gold.dim_calendario .................... [[32mOK[0m in 0.11s]
+[2025-12-10T07:28:55.195+0000] {subprocess.py:93} INFO - [0m07:28:55  9 of 18 START sql table model main_silver.sv_cotacoes_bolsa .................... [RUN]
+[2025-12-10T07:28:55.634+0000] {subprocess.py:93} INFO - [0m07:28:55  9 of 18 OK created sql table model main_silver.sv_cotacoes_bolsa ............... [[32mOK[0m in 0.44s]
+[2025-12-10T07:28:55.637+0000] {subprocess.py:93} INFO - [0m07:28:55  10 of 18 START sql table model main_silver.sv_df_empresas ...................... [RUN]
+[2025-12-10T07:28:55.793+0000] {subprocess.py:93} INFO - [0m07:28:55  10 of 18 OK created sql table model main_silver.sv_df_empresas ................. [[32mOK[0m in 0.15s]
+[2025-12-10T07:28:55.795+0000] {subprocess.py:93} INFO - [0m07:28:55  11 of 18 START sql table model main_silver.sv_empresas_bolsa ................... [RUN]
+[2025-12-10T07:28:55.948+0000] {subprocess.py:93} INFO - [0m07:28:55  11 of 18 OK created sql table model main_silver.sv_empresas_bolsa .............. [[32mOK[0m in 0.15s]
+[2025-12-10T07:28:55.951+0000] {subprocess.py:93} INFO - [0m07:28:55  12 of 18 START sql table model main_silver.sv_empresas_nivel_atividade ......... [RUN]
+[2025-12-10T07:28:56.057+0000] {subprocess.py:93} INFO - [0m07:28:56  12 of 18 OK created sql table model main_silver.sv_empresas_nivel_atividade .... [[32mOK[0m in 0.10s]
+[2025-12-10T07:28:56.059+0000] {subprocess.py:93} INFO - [0m07:28:56  13 of 18 START sql table model main_silver.sv_empresas_porte ................... [RUN]
+[2025-12-10T07:28:56.167+0000] {subprocess.py:93} INFO - [0m07:28:56  13 of 18 OK created sql table model main_silver.sv_empresas_porte .............. [[32mOK[0m in 0.11s]
+[2025-12-10T07:28:56.170+0000] {subprocess.py:93} INFO - [0m07:28:56  14 of 18 START sql table model main_silver.sv_empresas_saude_tributaria ........ [RUN]
+[2025-12-10T07:28:56.274+0000] {subprocess.py:93} INFO - [0m07:28:56  14 of 18 OK created sql table model main_silver.sv_empresas_saude_tributaria ... [[32mOK[0m in 0.10s]
+[2025-12-10T07:28:56.277+0000] {subprocess.py:93} INFO - [0m07:28:56  15 of 18 START sql table model main_silver.sv_empresas_simples ................. [RUN]
+[2025-12-10T07:28:56.387+0000] {subprocess.py:93} INFO - [0m07:28:56  15 of 18 OK created sql table model main_silver.sv_empresas_simples ............ [[32mOK[0m in 0.11s]
+[2025-12-10T07:28:56.389+0000] {subprocess.py:93} INFO - [0m07:28:56  16 of 18 START sql incremental model main_gold.fact_cotacao .................... [RUN]
+[2025-12-10T07:28:56.902+0000] {subprocess.py:93} INFO - [0m07:28:56  16 of 18 OK created sql incremental model main_gold.fact_cotacao ............... [[32mOK[0m in 0.51s]
+[2025-12-10T07:28:56.905+0000] {subprocess.py:93} INFO - [0m07:28:56  17 of 18 START sql incremental model main_gold.dim_empresa ..................... [RUN]
+[2025-12-10T07:28:57.112+0000] {subprocess.py:93} INFO - [0m07:28:57  17 of 18 OK created sql incremental model main_gold.dim_empresa ................ [[32mOK[0m in 0.21s]
+[2025-12-10T07:28:57.116+0000] {subprocess.py:93} INFO - [0m07:28:57  18 of 18 START sql view model main_gold.vw_cotacao ............................. [RUN]
+[2025-12-10T07:28:57.219+0000] {subprocess.py:93} INFO - [0m07:28:57  18 of 18 OK created sql view model main_gold.vw_cotacao ........................ [[32mOK[0m in 0.10s]
+[2025-12-10T07:28:57.253+0000] {subprocess.py:93} INFO - [0m07:28:57
+[2025-12-10T07:28:57.254+0000] {subprocess.py:93} INFO - [0m07:28:57  Finished running 15 table models, 2 incremental models, 1 view model in 0 hours 0 minutes and 4.20 seconds (4.20s).
+[2025-12-10T07:28:57.302+0000] {subprocess.py:93} INFO - [0m07:28:57
+[2025-12-10T07:28:57.302+0000] {subprocess.py:93} INFO - [0m07:28:57  [32mCompleted successfully[0m
+[2025-12-10T07:28:57.303+0000] {subprocess.py:93} INFO - [0m07:28:57
+[2025-12-10T07:28:57.304+0000] {subprocess.py:93} INFO - [0m07:28:57  Done. PASS=18 WARN=0 ERROR=0 SKIP=0 TOTAL=18
+[2025-12-10T07:28:58.413+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-12-10T07:28:58.414+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-12-10T07:28:58.434+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=neoway_dbt_orchestration, task_id=dbt_run, run_id=manual__2025-12-10T07:28:37.094938+00:00, execution_date=20251210T072837, start_date=20251210T072850, end_date=20251210T072858
+[2025-12-10T07:28:58.488+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-12-10T07:28:58.508+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-12-10T07:28:58.509+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

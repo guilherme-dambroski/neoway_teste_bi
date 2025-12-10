@@ -1,0 +1,1 @@
+[2025-12-10T07:15:40.035+0000] {task_context_logger.py:104} ERROR - Executor reports task instance <TaskInstance: neoway_dbt_orchestration.export_parquet manual__2025-12-10T07:10:09.405163+00:00 [queued]> finished (failed) although the task says it's queued. (Info: None) Was the task killed externally?
